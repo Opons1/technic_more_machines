@@ -1,16 +1,24 @@
 local modpath = minetest.get_modpath(minetest.get_current_modname())
-
+technic_more_machines = {}
 --LV
 dofile(modpath.."/LV/lv_rat_wheel.lua")
 dofile(modpath.."/LV/lv_blink.lua")
 dofile(modpath.."/LV/lv_spotlight.lua")
 dofile(modpath.."/LV/lv_health_charger.lua")
-dofile(modpath.."/LV/lv_tubelib_repairer.lua")
+--This is useless without tubelib, don't need it
+if core.get_modpath("tubelib") then
+    dofile(modpath.."/LV/lv_tubelib_repairer.lua")
+end
 --dofile(modpath.."/LV/lv_switcher.lua") --don't work
 
 --MV
-dofile(modpath.."/MV/mv_distiller.lua")
+--distiller recipes first, then distiller
+--does not load without farming redo
+--please tell me if there is a better way to detect farming redo
+if farming.node_sound_defaults then
 dofile(modpath.."/MV/mv_distiller_recipes.lua")
+dofile(modpath.."/MV/mv_distiller.lua")
+end
 dofile(modpath.."/MV/mv_riteg.lua")
 dofile(modpath.."/MV/mv_spotlight.lua")
 dofile(modpath.."/MV/mv_geothermal.lua")

@@ -9,8 +9,6 @@ minetest.register_craft({
 	}
 })
 
-technic.register_recipe_type("distilling", {description = "Distilling"})
-
 function technic.register_distiller(data)
 	data.typename = "distilling"
 	data.machine_name = "distiller"

@@ -19,7 +19,7 @@ technic.register_recipe_type("melting", {
 	input_size = 1,
 })
 
-function technic.register_furnace_recipe(data)
+function technic_more_machines.register_furnace_recipe(data)
 	data.time = data.time or 9
 	technic.register_recipe("melting", data)
 end
@@ -53,16 +53,16 @@ local recipes = {
 }
 
 for _, data in pairs(recipes) do
-	technic.register_furnace_recipe({input = { data[1] }, output = { data[2] } })
+	technic_more_machines.register_furnace_recipe({input = { data[1] }, output = { data[2] } })
 end
 
-function technic.register_furnace(data)
+function technic_more_machines.register_furnace(data)
 	data.typename = "melting"
 	data.machine_name = "furnace"
 	data.machine_desc = S("%s Furnace")
 	technic.register_base_machine(data)
 end
 
-technic.register_furnace({tier = "HV", demand = {30000, 20000, 10000}, speed = 1, upgrade = 1, tube = 1})
-
+technic_more_machines.register_furnace({tier = "HV", demand = {30000, 20000, 10000}, speed = 1, upgrade = 1, tube = 1})
+--why is this here
 minetest.register_alias_force('technic:hv_furnace', 'technic_more_machines:hv_furnace')

@@ -1,3 +1,4 @@
+--I need to make this respect protections later
 local dist = 4 -- distance from zero
 
 minetest.register_node("technic_more_machines:hv_laser", {

@@ -1,3 +1,4 @@
+-- I need to make this respect protection later
 local maxr = 100
 local r = 1 -- radius
 
@@ -12,7 +13,7 @@ minetest.register_node("technic_more_machines:hv_terraformer1", {
 		"technic_more_machines_hv_furnace_side.png^technic_more_machines_snow.png",
 	},
     is_ground_content = false,
-	groups = {cracky=2, technic_machine = 1, technic_hv = 1, not_in_creative_inventory = 1}, --delete not_in_creative_inventory = 1
+	groups = {cracky=2, technic_machine = 1, technic_hv = 1}, --delete not_in_creative_inventory = 1
 	paramtype = "light",
 	paramtype2 = "facedir",
 	connect_sides = {"top", "bottom", "left", "right", "back"},
@@ -36,7 +37,7 @@ minetest.register_node("technic_more_machines:hv_terraformer1", {
 	end,
 })
 
-minetest.register_craft({
+--[[minetest.register_craft({
 	output = "technic_more_machines:hv_terraformer1",
 	recipe = {
 		{"pipeworks:nodebreaker_off","basic_materials:gold_wire","pipeworks:deployer_off"},
@@ -44,7 +45,7 @@ minetest.register_craft({
 		{"technic:carbon_steel_block","technic:hv_cable","technic:carbon_steel_block"},
 	}
 })
-
+]]--
 minetest.register_abm({
 	nodenames = {"technic_more_machines:hv_terraformer1"},
 	interval = 60,
@@ -134,7 +135,7 @@ minetest.register_node("technic_more_machines:hv_terraformer2", {
 		"technic_more_machines_hv_furnace_side.png^technic_more_machines_coniferous.png",
 	},
     is_ground_content = false,
-	groups = {cracky=2, technic_machine = 1, technic_hv = 1},
+	groups = {cracky=2, technic_machine = 1, technic_hv = 1, not_in_creative_inventory = 1},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	connect_sides = {"top", "bottom", "left", "right", "back"},
@@ -232,7 +233,7 @@ minetest.register_node("technic_more_machines:hv_terraformer3", {
 		"technic_more_machines_hv_furnace_side.png^technic_more_machines_grass.png",
 	},
     is_ground_content = false,
-	groups = {cracky=2, technic_machine = 1, technic_hv = 1},
+	groups = {cracky=2, technic_machine = 1, technic_hv = 1, not_in_creative_inventory = 1},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	connect_sides = {"top", "bottom", "left", "right", "back"},
@@ -330,7 +331,7 @@ minetest.register_node("technic_more_machines:hv_terraformer4", {
 		"technic_more_machines_hv_furnace_side.png^technic_more_machines_rainforest.png",
 	},
     is_ground_content = false,
-	groups = {cracky=2, technic_machine = 1, technic_hv = 1},
+	groups = {cracky=2, technic_machine = 1, technic_hv = 1, not_in_creative_inventory = 1},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	connect_sides = {"top", "bottom", "left", "right", "back"},
@@ -428,7 +429,7 @@ minetest.register_node("technic_more_machines:hv_terraformer5", {
 		"technic_more_machines_hv_furnace_side.png^technic_more_machines_dry_grass.png",
 	},
     is_ground_content = false,
-	groups = {cracky=2, technic_machine = 1, technic_hv = 1},
+	groups = {cracky=2, technic_machine = 1, technic_hv = 1, not_in_creative_inventory = 1},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	connect_sides = {"top", "bottom", "left", "right", "back"},

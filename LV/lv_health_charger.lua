@@ -25,9 +25,12 @@ minetest.register_node("technic_more_machines:lv_health_charger", {
 		end
 
 --poison from water life support
+--Opons1: I never used water life and I don't have it, hopfully this still works fine with it
 		local meta = player:get_meta()
-		if meta:get_int("snakepoison") > 0 then meta:set_int("snakepoison",0) end
-		water_life.change_hud(player,"poison",0)                                
+		if meta:get_int("snakepoison") > 0 then 
+			meta:set_int("snakepoison",0) 
+			water_life.change_hud(player,"poison",0) 
+		end
 	end,
 	technic_run = function(pos)
 		local meta = minetest.get_meta(pos)

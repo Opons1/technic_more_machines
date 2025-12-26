@@ -11,9 +11,10 @@ minetest.register_node("technic_more_machines:mv_spotlight", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	light_source = 5,
-	groups = {cracky=2, technic_machine = 1, technic_mv = 1},
+	groups = {cracky=2, technic_machine = 1, technic_mv = 1, not_in_creative_inventory = 1},
 	sounds = default.node_sound_metal_defaults(),
 	connect_sides = {"top", "bottom", "left", "right", "back"},
+	drop = "technic_more_machines:mv_spotlight_off",
 	on_construct = function(pos)
 		local meta = minetest.get_meta(pos)
 		meta:set_int("MV_EU_demand", 500)
@@ -74,7 +75,6 @@ minetest.register_node("technic_more_machines:mv_spotlight_off", {
 	paramtype2 = "facedir",
 	groups = {cracky=2, technic_machine = 1, technic_mv = 1},
 	sounds = default.node_sound_metal_defaults(),
-	drop = "technic_more_machines:mv_spotlight",
 	on_construct = function(pos)
 		local meta = minetest.get_meta(pos)
 		meta:set_int("MV_EU_demand", 500)
@@ -89,7 +89,7 @@ technic.register_machine("MV", "technic_more_machines:mv_spotlight", technic.rec
 technic.register_machine("MV", "technic_more_machines:mv_spotlight_off", technic.receiver)
 
 minetest.register_craft({
-	output = "technic_more_machines:mv_spotlight",
+	output = "technic_more_machines:mv_spotlight_off",
 	recipe = {
 	{"basic_materials:steel_bar", "basic_materials:steel_bar", "basic_materials:steel_bar"},
 	{"default:steel_ingot", "default:meselamp", "default:steel_ingot"},

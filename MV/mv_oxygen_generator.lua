@@ -12,10 +12,10 @@ local oxigen_generator_demand = {5000, 4000, 3000}
 local oxigen_formspec =
 	"size[8,9;]"..
 	"list[current_name;src;3,1;1,1;]"..
-	"label[0,0;"..S("%s Oxygen Generator"):format("MV").."]"..
+	"label[0,0;MV Oxygen Generator]"..
 	"list[current_name;upgrade1;1,3;1,1;]"..
 	"list[current_name;upgrade2;2,3;1,1;]"..
-	"label[1,4;"..S("Upgrade Slots").."]"..
+	"label[1,4;Upgrade Slots]"..
 	"list[current_player;main;0,5;8,4;]"..
 	"listring[current_player;main]"..
 	"listring[current_name;src]"..
