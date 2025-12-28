@@ -1,4 +1,5 @@
 -- MV distiller
+local S = technic.getter
 
 minetest.register_craft({
 	output = 'technic_more_machines:mv_distiller',
@@ -7,6 +8,12 @@ minetest.register_craft({
 		{'pipeworks:tube_1',              'technic:mv_transformer', 'pipeworks:tube_1'},
 		{'technic:stainless_steel_ingot', 'technic:mv_cable',       'technic:stainless_steel_ingot'},
 	}
+})
+--register craft type
+technic.register_recipe_type("distilling", {
+	description = S("Distilling"),
+	input_size = 2,
+	icon = "technic_more_machines_mv_distiller_front.png",
 })
 
 function technic.register_distiller(data)
@@ -17,15 +24,6 @@ function technic.register_distiller(data)
 end
 
 technic.register_distiller({tier = "MV", demand = {800, 600, 400}, speed = 2, upgrade = 1, tube = 1})
-
-minetest.register_alias_force('technic:mv_distiller', 'technic_more_machines:mv_distiller')
-
-local S = technic.getter
-
-technic.register_recipe_type("distilling", {
-	description = S("Distilling"),
-	input_size = 2,
-})
 
 function technic.register_distiller_recipe(data)
 	data.time = data.time or 4
