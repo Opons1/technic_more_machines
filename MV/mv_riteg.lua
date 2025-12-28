@@ -14,7 +14,7 @@ minetest.register_craft({
 })
 
 minetest.register_node("technic_more_machines:mv_riteg", {
-	description = "MV Radioisotope Thermoelectric Generator",
+	description = "MV Radioisotope Thermoelectric Generator\n"..minetest.colorize("#84bac1ff", "RADIOACTIVE, generates less power over time"),
 	tiles = {
 		"technic_more_machines_mv_distiller_bottom.png",
 		"technic_more_machines_mv_distiller_bottom.png",
@@ -90,7 +90,7 @@ minetest.register_node("technic_more_machines:mv_riteg_2", {
 			{-0.4375, -0.5, -0.5, -0.375, 0.5, 0.5}, -- NodeBox9
 		}
 	},
-	groups = {cracky = 2, technic_machine = 1, technic_mv = 1, radioactive = 1},
+	groups = {cracky = 2, technic_machine = 1, technic_mv = 1, radioactive = 1, not_in_creative_inventory = 1},
 	sounds = default.node_sound_metal_defaults(),
 	connect_sides = {"top", "bottom", "left"},
 	on_construct = function(pos)
@@ -140,7 +140,7 @@ minetest.register_node("technic_more_machines:mv_riteg_3", {
 			{-0.4375, -0.5, -0.5, -0.375, 0.5, 0.5}, -- NodeBox9
 		}
 	},
-	groups = {cracky = 2, technic_machine = 1, technic_mv = 1, radioactive = 1},
+	groups = {cracky = 2, technic_machine = 1, technic_mv = 1, radioactive = 1, not_in_creative_inventory = 1},
 	sounds = default.node_sound_metal_defaults(),
 	connect_sides = {"top", "bottom", "left"},
 	on_construct = function(pos)
@@ -190,7 +190,7 @@ minetest.register_node("technic_more_machines:mv_riteg_4", {
 			{-0.4375, -0.5, -0.5, -0.375, 0.5, 0.5}, -- NodeBox9
 		}
 	},
-	groups = {cracky = 2, technic_machine = 1, technic_mv = 1, radioactive = 1},
+	groups = {cracky = 2, technic_machine = 1, technic_mv = 1, radioactive = 1, not_in_creative_inventory = 1},
 	sounds = default.node_sound_metal_defaults(),
 	connect_sides = {"top", "bottom", "left"},
 	on_construct = function(pos)
@@ -241,7 +241,7 @@ minetest.register_node("technic_more_machines:mv_riteg_5", {
 			{-0.4375, -0.5, -0.5, -0.375, 0.5, 0.5}, -- NodeBox9
 		}
 	},
-	groups = {cracky = 2, technic_machine = 1, technic_mv = 1, radioactive = 1},
+	groups = {cracky = 2, technic_machine = 1, technic_mv = 1, radioactive = 1, not_in_creative_inventory = 1},
 	sounds = default.node_sound_metal_defaults(),
 	connect_sides = {"top", "bottom", "left"},
 	on_construct = function(pos)
