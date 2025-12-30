@@ -102,9 +102,9 @@ minetest.register_abm({
 		end)
 
 		if eu_input < oxigen_generator_demand[EU_upgrade+1] then
-			meta:set_string("infotext", S("%s Unpowered"):format(machine_name))
+			meta:set_string("infotext", "MV Oxygen Generator Inactive")
 		elseif eu_input >= oxigen_generator_demand[EU_upgrade+1] then
-			meta:set_string("infotext", S("%s Active"):format(machine_name))
+			meta:set_string("infotext", "MV Oxygen Generator Active")
 			inv:add_item("src", "technic_more_machines:oxygen")
 		end
 		meta:set_int("MV_EU_demand", oxigen_generator_demand[EU_upgrade+1])
