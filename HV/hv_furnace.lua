@@ -14,14 +14,14 @@ minetest.register_craft({
 
 local S = technic.getter
 
-technic.register_recipe_type("melting", {
+technic.register_recipe_type("bulk_melting", {
 	description = S("Melting"),
 	input_size = 1,
 })
 
 function technic_more_machines.register_furnace_recipe(data)
 	data.time = data.time or 9
-	technic.register_recipe("melting", data)
+	technic.register_recipe("bulk_melting", data)
 end
 
 local recipes = {
@@ -57,7 +57,7 @@ for _, data in pairs(recipes) do
 end
 
 function technic_more_machines.register_furnace(data)
-	data.typename = "melting"
+	data.typename = "bulk_melting"
 	data.machine_name = "furnace"
 	data.machine_desc = S("%s Furnace")
 	technic.register_base_machine(data)
