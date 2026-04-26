@@ -12,6 +12,16 @@ minetest.register_craft({
 		{'technic:chromium_block', 'technic:mv_cable', 'technic:chromium_block'},
 	}
 })
+if core.get_modpath("technic_many_machines") then
+	minetest.register_craft({
+		output = 'technic_more_machines:mv_riteg',
+		recipe = {
+			{'pipeworks:pipe_1_empty', 'technic:geothermal', 'pipeworks:pipe_1_empty'},
+			{'technic:uranium0_block', 'technic_many_machines:thorium_block', 'technic:uranium0_block'},
+			{'technic:chromium_block', 'technic:mv_cable', 'technic:chromium_block'},
+		}
+	})
+end
 
 minetest.register_node("technic_more_machines:mv_riteg", {
 	description = "MV Radioisotope Thermoelectric Generator\n"..minetest.colorize("#84bac1ff", "RADIOACTIVE, generates less power over time"),
