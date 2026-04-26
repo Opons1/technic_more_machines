@@ -75,7 +75,7 @@ local geo_run = function(pos, node)
 		end
 	end
 
-	meta:set_int("MV_EU_supply", 25 * #water + 50 * #ice + 50 * #lava)
+	meta:set_int("MV_EU_supply", 100 * #water + 50 * #ice + 50 * #lava)
 
 	-- no lava or no water = no steam = no power
 	if #lava == 0 or (#water + #ice) == 0 then

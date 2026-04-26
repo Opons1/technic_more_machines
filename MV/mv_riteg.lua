@@ -55,14 +55,14 @@ minetest.register_node("technic_more_machines:mv_riteg", {
 	connect_sides = {"top", "bottom", "left"},
 	on_construct = function(pos)
 			local meta = minetest.get_meta(pos)
-			meta:set_int("MV_EU_supply", 900)
+			meta:set_int("MV_EU_supply", 2400)
 			local timer = minetest.get_node_timer(pos)
         	timer:start(157788)
 	end,
 	on_timer = function(pos, node)
 		local meta = minetest.get_meta(pos)
 		meta:set_int("MV_EU_supply", meta:get_int("MV_EU_supply") - 1)
-		if meta:get_int("MV_EU_supply") == 700 then
+		if meta:get_int("MV_EU_supply") == 1900 then
 			technic.swap_node(pos, "technic_more_machines:mv_riteg_2")
 		end
 		return true
@@ -105,14 +105,14 @@ minetest.register_node("technic_more_machines:mv_riteg_2", {
 	connect_sides = {"top", "bottom", "left"},
 	on_construct = function(pos)
 			local meta = minetest.get_meta(pos)
-			meta:set_int("MV_EU_supply", 700)
+			meta:set_int("MV_EU_supply", 1900)
 			local timer = minetest.get_node_timer(pos)
         	timer:start(157788)
 	end,
 	on_timer = function(pos, node)
 		local meta = minetest.get_meta(pos)
 		meta:set_int("MV_EU_supply", meta:get_int("MV_EU_supply") - 1)
-		if meta:get_int("MV_EU_supply") == 500 then
+		if meta:get_int("MV_EU_supply") == 1400 then
 			technic.swap_node(pos, "technic_more_machines:mv_riteg_3")
 		end
 		return true
@@ -155,14 +155,14 @@ minetest.register_node("technic_more_machines:mv_riteg_3", {
 	connect_sides = {"top", "bottom", "left"},
 	on_construct = function(pos)
 			local meta = minetest.get_meta(pos)
-			meta:set_int("MV_EU_supply", 500)
+			meta:set_int("MV_EU_supply", 1400)
 			local timer = minetest.get_node_timer(pos)
         	timer:start(157788)
 	end,
 	on_timer = function(pos, node)
 		local meta = minetest.get_meta(pos)
 		meta:set_int("MV_EU_supply", meta:get_int("MV_EU_supply") - 1)
-		if meta:get_int("MV_EU_supply") == 300 then
+		if meta:get_int("MV_EU_supply") == 900 then
 			technic.swap_node(pos, "technic_more_machines:mv_riteg_4")
 		end
 		return true
@@ -205,14 +205,14 @@ minetest.register_node("technic_more_machines:mv_riteg_4", {
 	connect_sides = {"top", "bottom", "left"},
 	on_construct = function(pos)
 			local meta = minetest.get_meta(pos)
-			meta:set_int("MV_EU_supply", 300)
+			meta:set_int("MV_EU_supply", 900)
 			local timer = minetest.get_node_timer(pos)
         	timer:start(157788)
 	end,
 	on_timer = function(pos, node)
 		local meta = minetest.get_meta(pos)
 		meta:set_int("MV_EU_supply", meta:get_int("MV_EU_supply") - 1)
-		if meta:get_int("MV_EU_supply") == 100 then
+		if meta:get_int("MV_EU_supply") == 400 then
 			technic.swap_node(pos, "technic_more_machines:mv_riteg_5")
 			return false
 		end
@@ -256,7 +256,7 @@ minetest.register_node("technic_more_machines:mv_riteg_5", {
 	connect_sides = {"top", "bottom", "left"},
 	on_construct = function(pos)
 			local meta = minetest.get_meta(pos)
-			meta:set_int("MV_EU_supply", 100)
+			meta:set_int("MV_EU_supply", 400)
 	end,
 	technic_run = function(pos)
 		local meta = minetest.get_meta(pos)
