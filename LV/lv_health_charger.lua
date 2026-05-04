@@ -18,18 +18,20 @@ minetest.register_node("technic_more_machines:lv_health_charger", {
 		meta:set_int("LV_EU_demand", 2500)
 	end,
 	on_rightclick = function(pos, node, player, itemstack, pointed_thing)
-		if player:get_hp() < 20 then
-			minetest.sound_play("health_charger",{max_hear_distance = 16,pos = pos,gain = 1.0})
---			stamina.change(player, 20)
-			player:set_hp(player:get_hp() + 10)
-		end
+		if core.get_meta(pos):get_int("LV_EU_input") >= 2500 then
+			if player:get_hp() < 20 then
+				minetest.sound_play("health_charger",{max_hear_distance = 16,pos = pos,gain = 1.0})
+--				stamina.change(player, 20)
+				player:set_hp(player:get_hp() + 10)
+			end
 
---poison from water life support
---Opons1: I never used water life and I don't have it, hopfully this still works fine with it
-		local meta = player:get_meta()
-		if meta:get_int("snakepoison") > 0 then 
-			meta:set_int("snakepoison",0) 
-			water_life.change_hud(player,"poison",0) 
+			--poison from water life support
+			--Opons1: I never used water life and I don't have it, hopfully this still works fine with it
+			local meta = player:get_meta()
+			if meta:get_int("snakepoison") > 0 then 
+				meta:set_int("snakepoison",0) 
+				water_life.change_hud(player,"poison",0) 
+			end
 		end
 	end,
 	technic_run = function(pos)
