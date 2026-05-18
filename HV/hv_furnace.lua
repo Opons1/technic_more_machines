@@ -15,12 +15,12 @@ minetest.register_craft({
 local S = technic.getter
 
 technic.register_recipe_type("bulk_melting", {
-	description = S("Melting"),
+	description = S("Bulk Melting"),
 	input_size = 1,
 })
 
 function technic_more_machines.register_furnace_recipe(data)
-	data.time = data.time or 9
+	data.time = data.time or 5
 	technic.register_recipe("bulk_melting", data)
 end
 

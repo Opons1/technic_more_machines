@@ -14,15 +14,15 @@ minetest.register_craft({
 
 local S = technic.getter
 
-technic.register_recipe_type("hv_melting", {
-	description = S("HV Melting"),
+technic.register_recipe_type("bulk_melting", {
+	description = S("Bulk Melting"),
 	input_size = 1,
     icon = "technic_more_machines_hv_furnace_front_active.png",
-})v_
+})
 
 function technic_more_machines.register_furnace_recipe(data)
-	data.time = data.time or 9
-	technic.register_recipe("melting", data)
+	data.time = data.time or 5
+	technic.register_recipe("bulk_melting", data)
 end
 
 local recipes = {
@@ -59,7 +59,7 @@ end
 
 technic.register_base_machine(
     "technic_more_machines:hv_furnace", {
-    typename = "hv_melting",
+    typename = "bulk_melting",
     description = "HV Furnace",
     tier = "HV",
     demand = {30000, 20000, 10000},
